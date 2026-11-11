@@ -1,53 +1,321 @@
+/* Modern Minimalist Monochrome Resume Theme */
+:root {
+  --text-primary: #111111;
+  --text-secondary: #1f2937;
+  --text-muted: #4b5563;
+  --divider-color: #e5e7eb;
+  --bar-bg: #e5e7eb;
+  --bar-fill: #111111;
+}
+
 body {
-    font-family: 'Quicksand', sans-serif;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  color: var(--text-primary);
+  background-color: #f3f4f6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
-.color-primary {
-    color: #17A2B8;
-}
-.color-1 {
-    color: #083E46;
-}
-.color-2 {
-    color: #0B545F;
-}
-.color-3 {
-    color: #0F6A79;
-}
-.color-4 {
-    color: #128092;
-}
-.color-5 {
-    color: #1596AB;
-}
-.color-6 {
-    color: #18ADC4;
-}
-.smaller {
-    font-size: 70%;
-}
-.pie {
-    /* Basic layout */
-    display: inline-block;
-    width: 100%;
-    padding-top: 100%;
-    border-radius: 50%;
 
-    /* A little styling */
-    border: .15em solid #fff;
-    box-shadow: 0 .075em .2em .05em rgba(0,0,0,.25);
+/* Header */
+.resume-header {
+  padding-bottom: 0.25rem;
+}
 
-    /* fixes a minor clipping issue in Chrome */
-    background-origin: border-box;
-    background-image: conic-gradient(
-        #083E46 108deg,      /* 30%                  30 * 3.6                  (end of segment 1) */
-        #0B545F 108deg,      /* 30%                                          (start of segment 2) */
-        #0B545F 198deg,      /* 55%           (25 + 30) * 3.6                  (end of segment 2) */
-        #0F6A79 198deg,      /* 55%                                          (start of segment 3) */
-        #0F6A79 263deg,      /* 73%           (18 + 55) * 3.6                  (end of segment 3) */
-        #128092 263deg,      /* 73%                                          (start of segment 4) */
-        #128092 313deg,      /* 87%           (14 + 73) * 3.6                  (end of segment 4) */
-        #1596AB 313deg,      /* 87%                                          (start of segment 5) */
-        #1596AB 342deg,      /* 95%            (8 + 87) * 3.6                  (end of segment 5) */
-        #18ADC4 0            /* 100%     last stop is always 360 degrees     (start of segment 6) */
-    );
+.resume-name {
+  font-size: 2.1rem;
+  font-weight: 900;
+  letter-spacing: 2px;
+  line-height: 1.05;
+  color: var(--text-primary);
+  text-transform: uppercase;
+  margin: 0;
+}
+
+.resume-subtitle {
+  font-size: 0.95rem;
+  font-weight: 400;
+  color: var(--text-muted);
+  letter-spacing: 0.5px;
+  margin-top: 0.35rem;
+  margin-bottom: 0;
+}
+
+.header-divider {
+  border: 0;
+  border-top: 1px solid var(--divider-color);
+  margin-top: 0.65rem;
+  margin-bottom: 0.8rem;
+}
+
+/* Two-column layout */
+.resume-body {
+  display: flex;
+  width: 100%;
+}
+
+.sidebar-col {
+  width: 32%;
+  padding-right: 1.35rem;
+  border-right: 1px solid var(--divider-color);
+  flex-shrink: 0;
+}
+
+.main-col {
+  width: 68%;
+  padding-left: 1.35rem;
+}
+
+/* Section Titles with Signature Black Accent Line */
+.section-title {
+  font-size: 0.85rem;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--text-primary);
+  margin: 0 0 0.15rem 0;
+}
+
+.section-bar {
+  width: 26px;
+  height: 2.5px;
+  background-color: var(--text-primary);
+  margin-bottom: 0.65rem;
+  border-radius: 1px;
+}
+
+.resume-section {
+  margin-bottom: 0.9rem;
+}
+
+.main-section {
+  margin-bottom: 0.75rem;
+}
+
+/* Info Section */
+.info-group {
+  margin-bottom: 0.45rem;
+}
+
+.info-label {
+  font-size: 0.64rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--text-primary);
+  margin-bottom: 1px;
+}
+
+.info-value {
+  font-size: 0.72rem;
+  color: var(--text-secondary);
+  line-height: 1.35;
+  word-break: break-all;
+}
+
+.info-value a {
+  color: var(--text-secondary);
+  text-decoration: none;
+}
+
+.info-value a:hover {
+  text-decoration: underline;
+  color: var(--text-primary);
+}
+
+/* Skills Section */
+.skill-item {
+  margin-bottom: 0.4rem;
+}
+
+.skill-name {
+  font-size: 0.7rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 2px;
+}
+
+.skill-bar {
+  height: 3.5px;
+  background-color: var(--bar-bg);
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.skill-fill {
+  height: 100%;
+  background-color: var(--bar-fill);
+  border-radius: 2px;
+}
+
+.other-skills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  margin-top: 0.55rem;
+}
+
+.skill-tag {
+  font-size: 0.64rem;
+  font-weight: 600;
+  background-color: #f3f4f6;
+  color: var(--text-primary);
+  padding: 2px 8px;
+  border-radius: 9999px;
+  border: 1px solid #d1d5db;
+  letter-spacing: 0.2px;
+}
+
+/* Education Section */
+.education-item {
+  margin-bottom: 0.45rem;
+}
+
+.edu-degree {
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  line-height: 1.25;
+}
+
+.edu-institution {
+  font-size: 0.69rem;
+  color: var(--text-secondary);
+  margin-top: 1px;
+}
+
+.edu-meta {
+  font-size: 0.66rem;
+  color: var(--text-muted);
+  margin-top: 1px;
+}
+
+/* Awards Section */
+.award-item {
+  margin-bottom: 0.4rem;
+}
+
+.award-title {
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  line-height: 1.25;
+}
+
+.award-meta {
+  font-size: 0.66rem;
+  color: var(--text-muted);
+  margin-top: 1px;
+}
+
+/* Hobbies Section */
+.activity-item,
+.hobby-item {
+  font-size: 0.68rem;
+  color: var(--text-secondary);
+  line-height: 1.45;
+  margin-bottom: 3px;
+}
+
+/* Profile Text */
+.profile-text {
+  font-size: 0.72rem;
+  line-height: 1.45;
+  color: var(--text-secondary);
+  text-align: justify;
+  margin: 0;
+}
+
+.section-divider {
+  border: 0;
+  border-top: 1px solid var(--divider-color);
+  margin-top: 0.6rem;
+  margin-bottom: 0.7rem;
+}
+
+/* Employment History */
+.job-item {
+  margin-bottom: 0.4rem;
+}
+
+.job-item:last-child {
+  margin-bottom: 0;
+}
+
+.job-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 2px;
+}
+
+.job-company {
+  font-size: 0.77rem;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.job-location {
+  font-size: 0.68rem;
+  font-weight: 500;
+  color: var(--text-muted);
+}
+
+.job-subroles {
+  margin-bottom: 2px;
+}
+
+.subrole {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  font-size: 0.69rem;
+  line-height: 1.35;
+}
+
+.subrole-title {
+  font-weight: 600;
+  color: #1f2937;
+}
+
+.subrole-dates {
+  font-size: 0.67rem;
+  color: var(--text-muted);
+  font-weight: 600;
+}
+
+.job-company-desc {
+  font-size: 0.68rem;
+  color: var(--text-muted);
+  line-height: 1.3;
+  margin: 1px 0 3px 0;
+}
+
+.job-bullets {
+  margin: 0;
+  padding-left: 1.05rem;
+  list-style-type: disc;
+}
+
+.job-bullets li {
+  font-size: 0.69rem;
+  line-height: 1.33;
+  color: var(--text-secondary);
+  margin-bottom: 2px;
+  text-align: justify;
+}
+
+/* Print adjustments */
+@media print {
+  body {
+    background-color: #fff !important;
+  }
+  .page {
+    box-shadow: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+}
+
+.job-subroles .job-bullets {
+  margin-bottom: 1px;
 }
